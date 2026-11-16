@@ -1,0 +1,59 @@
+<ion-header id="header">
+  <ion-toolbar id="toolbar">
+    <ion-title id="header-text"></ion-title>
+    <ion-button id="back-button" slot="start" (click)="dismiss()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content">
+  <ion-card id="main-card">
+    <ion-card-header id="main-card-header">
+      <ion-card-title id="main-card-title">
+        Log Your {{logType}}
+      </ion-card-title>
+    </ion-card-header>
+    @if(logType === "Nap") {
+      <ion-card-content id="sleep-card-content">
+        <ion-label id="start-label">Start Time</ion-label>
+        <ion-input id="start-date" type="date" [(ngModel)]="startDate"></ion-input>
+        {{startDate}}
+        <ion-input id="start-time" type="time" [(ngModel)]="startTime"></ion-input>
+        {{startTime}}
+          <br>
+          <br>
+          <br>
+        <ion-label id="end-label">End Time</ion-label>
+        <ion-input id="end-date" type="date" [(ngModel)]="endDate"></ion-input>
+        {{endDate}}
+        <ion-input id="end-time" type="time" [(ngModel)]="endTime"></ion-input>
+        {{endTime}}
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        <ion-toolbar id="log-toolbar">
+          <ion-button (click)="logSleepTime()" id="log-button" slot="end">Log</ion-button>
+        </ion-toolbar>
+      </ion-card-content>
+    }
+    @else {
+      <ion-card-content id="drowsy-card-content">
+        <ion-label id="start-label">How drowsy are you?</ion-label>
+        <ion-range [(ngModel)]="drowsyValue" aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="1" [max]="7"></ion-range>
+          <br>
+        <ion-toolbar id="log-toolbar">
+          <p>{{drowsyValue}}</p>
+          <ion-button (click)="logDrowsyValue()" id="log-button" slot="end">Log</ion-button>
+        </ion-toolbar>
+      </ion-card-content>
+    }
+
+    <ion-card class="ion-text-center">
+      <ion-card-header>
+        <p>Subscribe to SpaceSleep Premium for hot single aliens in your dreams!</p>
+      </ion-card-header>
+    </ion-card>
+  </ion-card>
+</ion-content>

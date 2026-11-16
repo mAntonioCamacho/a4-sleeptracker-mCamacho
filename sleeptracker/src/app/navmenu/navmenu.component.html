@@ -1,0 +1,16 @@
+<div class="nav">
+    @if(ShowMenuOptions){
+      <div class="menu-options">
+        <div class="level-one">
+          <ion-button (click)="onSleepButtonClick()" id="option-one"><ion-icon id="bed-outline" name="bed-outline"></ion-icon></ion-button>  
+        </div>
+        <div class="level-two">
+          <ion-button (click)="onDrowsyButtonClick()" id="option-two"><ion-icon id="battery-half-outline" name="battery-half-outline"></ion-icon></ion-button>
+          <ion-button (click)="onStatsButtonClick()" id="option-drei"><ion-icon id="stats-chart-outline" name="stats-chart-outline"></ion-icon></ion-button>
+        </div>
+      </div> 
+    }
+    <div class="main-button" id="level-rei">
+      <ion-button (click)="onButtonClick()"><ion-icon id="add-circle-outline" [name]="ShowMenuIcon"></ion-icon></ion-button>
+    </div>
+</div>
