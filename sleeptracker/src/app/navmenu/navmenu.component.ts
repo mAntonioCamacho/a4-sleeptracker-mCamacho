@@ -3,6 +3,7 @@ import { IonButton, ModalController, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { addCircleOutline, batteryHalfOutline, statsChartOutline, bedOutline, closeCircleOutline } from 'ionicons/icons';
 import { DateModalComponent } from '../date-modal/date-modal/date-modal.component';
+import { StatsModalComponent } from '../stats-modal/stats-modal/stats-modal.component';
 
 @Component({
   selector: 'app-navmenu',
@@ -48,6 +49,10 @@ export class NavmenuComponent  implements OnInit {
   }
 
   onStatsButtonClick() {
-    console.log("I stat that");
+    this.modalController.create({
+      component: StatsModalComponent
+    }).then((modal) => {
+      modal.present();
+    });
   }
 }

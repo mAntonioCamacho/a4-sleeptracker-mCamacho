@@ -7,11 +7,13 @@
 
 <ion-content id="main-content">
   <ion-card id="main-card">
+    
     <ion-card-header id="main-card-header">
       <ion-card-title id="main-card-title">
         Log Your {{logType}}
       </ion-card-title>
     </ion-card-header>
+
     @if(logType === "Nap") {
       <ion-card-content id="sleep-card-content">
         <ion-label id="start-label">Start Time</ion-label>
@@ -55,5 +57,6 @@
         <p>Subscribe to SpaceSleep Premium for hot single aliens in your dreams!</p>
       </ion-card-header>
     </ion-card>
+
   </ion-card>
 </ion-content>

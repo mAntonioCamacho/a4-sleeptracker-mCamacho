@@ -1,3 +1,36 @@
-<p>
-  stats-modal works!
-</p>
+<ion-header id="header">
+  <ion-toolbar id="toolbar">
+    <ion-title id="header-text"></ion-title>
+    <ion-button id="back-button" slot="start" (click)="dismiss()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card id="main-card">
+    <ion-card-header id="main-card-header">
+      <ion-card-title id="main-card-title">
+        Logged {{logType}} Data
+      </ion-card-title>
+    </ion-card-header>
+    <!-- I think a button that switches between sleep logs and drowsy logs could be cool -->
+    <!-- ALSO i'm sleepy... don't remember what i was gonna say-->
+    <ion-card-content id="main-card-content">
+      @if(!swapData) {
+        @for(sleepLog of sleepLogs; track sleepLog) {
+          <ion-card id="sleep-log-card">
+            {{sleepLog.dateString()}}
+          </ion-card>
+        }
+      } 
+      @else {
+        @for(drowsyLog of drowsyLogs; track drowsyLog) {
+          <ion-card id="drowsy-log-card">
+            {{drowsyLog.summaryString()}}
+          </ion-card>
+        }
+      }
+    </ion-card-content>
+    <ion-toolbar id="swap-toolbar">
+      <ion-button (click)="swapToOtherData()" id="log-button" slot="end">Swap Data</ion-button>
+    </ion-toolbar>
+  </ion-card>
+</ion-content>

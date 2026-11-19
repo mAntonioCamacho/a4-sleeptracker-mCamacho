@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { SleepService } from '../services/sleep.service';
 import { NavmenuComponent } from '../navmenu/navmenu.component';
+
 import { SleepData } from '../data/sleep-data';
 import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
