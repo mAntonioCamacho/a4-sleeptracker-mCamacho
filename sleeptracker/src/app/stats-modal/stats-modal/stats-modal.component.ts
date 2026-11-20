@@ -8,6 +8,7 @@ import { StanfordSleepinessData } from 'src/app/data/stanford-sleepiness-data';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardTitle, IonCardHeader, IonIcon, IonLabel, IonCardContent, IonItem, IonButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { arrowBackOutline } from 'ionicons/icons';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-stats-modal',
@@ -30,15 +31,21 @@ export class StatsModalComponent  implements OnInit {
     this.drowsyLogs = SleepService.AllSleepinessData;
   }
 
+  async doHapticFeedback() {
+    await Haptics.impact({style: ImpactStyle.Heavy})
+  }
+
   dismiss() {
     this.modalController.dismiss({
       'dismissed': true
     });
+    this.doHapticFeedback();
   }
 
   swapToOtherData() {
     this.swapData = (!this.swapData) ? true : false;
     this.logType = (this.swapData) ? 'Drowsy' : 'Sleep';
+    this.doHapticFeedback();
   }
 
 

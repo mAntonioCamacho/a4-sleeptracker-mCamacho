@@ -17,17 +17,17 @@
     @if(logType === "Nap") {
       <ion-card-content id="sleep-card-content">
         <ion-label id="start-label">Start Time</ion-label>
-        <ion-input id="start-date" type="date" [(ngModel)]="startDate"></ion-input>
+        <ion-input id="start-date" (ion-change)="doHapticFeedbackLight()" type="date" [(ngModel)]="startDate"></ion-input>
         {{startDate}}
-        <ion-input id="start-time" type="time" [(ngModel)]="startTime"></ion-input>
+        <ion-input id="start-time" (ion-change)="doHapticFeedbackLight()" type="time" [(ngModel)]="startTime"></ion-input>
         {{startTime}}
           <br>
           <br>
           <br>
         <ion-label id="end-label">End Time</ion-label>
-        <ion-input id="end-date" type="date" [(ngModel)]="endDate"></ion-input>
+        <ion-input id="end-date" (ion-change)="doHapticFeedbackLight()" type="date" [(ngModel)]="endDate"></ion-input>
         {{endDate}}
-        <ion-input id="end-time" type="time" [(ngModel)]="endTime"></ion-input>
+        <ion-input id="end-time" (ion-change)="doHapticFeedbackLight()" type="time" [(ngModel)]="endTime"></ion-input>
         {{endTime}}
           <br>
           <br>
@@ -43,7 +43,7 @@
     @else {
       <ion-card-content id="drowsy-card-content">
         <ion-label id="start-label">How drowsy are you?</ion-label>
-        <ion-range [(ngModel)]="drowsyValue" aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="1" [max]="7"></ion-range>
+        <ion-range [(ngModel)]="drowsyValue" (ion-change)="doHapticFeedbackLight()" aria-label="Range with ticks" [ticks]="true" [snaps]="true" [min]="1" [max]="7"></ion-range>
           <br>
         <ion-toolbar id="log-toolbar">
           <p>{{drowsyValue}}</p>
@@ -52,7 +52,7 @@
       </ion-card-content>
     }
 
-    <ion-card class="ion-text-center">
+    <ion-card class="ion-text-center" id="ion-card-ad-space">
       <ion-card-header>
         <p>Subscribe to SpaceSleep Premium for hot single aliens in your dreams!</p>
       </ion-card-header>

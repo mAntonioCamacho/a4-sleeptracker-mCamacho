@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +8,7 @@ import { arrowBackOutline } from 'ionicons/icons';
 import { SleepService } from 'src/app/services/sleep.service';
 import { OvernightSleepData } from 'src/app/data/overnight-sleep-data';
 import { StanfordSleepinessData } from 'src/app/data/stanford-sleepiness-data';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-date-modal',
@@ -34,10 +35,19 @@ export class DateModalComponent  implements OnInit {
 
   ngOnInit() {}
 
+  async doHapticFeedbackStrong() {
+    await Haptics.impact({style: ImpactStyle.Heavy})
+  }
+
+  async doHapticFeedbackLight() {
+    await Haptics.impact( {style: ImpactStyle.Light} )
+  }
+
   dismiss() {
     this.modalController.dismiss({
       'dismissed': true
     });
+    this.doHapticFeedbackStrong();
   }
 
   logSleepTime() {
@@ -48,11 +58,13 @@ export class DateModalComponent  implements OnInit {
     console.log(logged_time);
 
     this.sleepService.logOvernightData(new OvernightSleepData(logged_time.start, logged_time.end));
+    this.doHapticFeedbackStrong();
   }
 
   logDrowsyValue() {
     var logged_drowsy_value = this.drowsyValue;
     this.sleepService.logSleepinessData(new StanfordSleepinessData(logged_drowsy_value));
+    this.doHapticFeedbackStrong();
   }
 
 }
