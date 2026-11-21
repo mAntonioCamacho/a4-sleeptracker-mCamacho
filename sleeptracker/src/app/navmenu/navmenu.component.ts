@@ -37,8 +37,7 @@ export class NavmenuComponent  implements OnInit {
     this.modalController.create({
       component: DateModalComponent,
       componentProps: {
-        logType: "Nap",
-        givenPermission: this.hasLocation
+        logType: "Cryostasis"
       }
     }).then((modal) => {
       modal.present();
@@ -50,8 +49,7 @@ export class NavmenuComponent  implements OnInit {
     this.modalController.create({
       component: DateModalComponent,
       componentProps: {
-        logType: "Drowsiness",
-        givenPermission: this.hasLocation
+        logType: "Drowsiness"
       }
     }).then((modal) => {
       modal.present();

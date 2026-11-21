@@ -15,22 +15,18 @@
   transform: translateY(-105%);
 }
 
-.level-two {
-  background-color: #0095ff7a;
-}
-
 #level-rei {
   text-align: center;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
-  background-color: #0095ff7a;
 }
 
 ion-button {
-  --color: #00ff84ee;
-  --background: #e702024b;
+  --color: #00ff84ee;;
+  //#00ff84ee
+  --background: #00ff8455;
 }
 
 #option-one {

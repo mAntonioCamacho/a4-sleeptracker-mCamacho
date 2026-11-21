@@ -20,7 +20,7 @@ export class StatsModalComponent  implements OnInit {
   sleepLogs:OvernightSleepData[] = [];
   drowsyLogs:StanfordSleepinessData[] = [];
   swapData:boolean = false;
-  logType:string = 'Sleep';
+  logType:string = 'Cryostasis';
 
   constructor(private modalController:ModalController) { 
     addIcons({ arrowBackOutline });
@@ -44,7 +44,7 @@ export class StatsModalComponent  implements OnInit {
 
   swapToOtherData() {
     this.swapData = (!this.swapData) ? true : false;
-    this.logType = (this.swapData) ? 'Drowsy' : 'Sleep';
+    this.logType = (this.swapData) ? 'Drowsy' : 'Cryostasis';
     this.doHapticFeedback();
   }
 

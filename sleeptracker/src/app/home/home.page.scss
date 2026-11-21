@@ -27,13 +27,14 @@
 }
 
 .main-page-content {
-  --ion-background-color: linear-gradient(to top, #0a002876, #0573b7a0);
+  --ion-background-color: linear-gradient(to top, #0573b728, #000000);
   background: url(../../assets/stars-background.png);
   animation: stars 1400s linear infinite;
 }
 
 .main-page-header {
-  box-shadow: none;
+  background: #000000;
+  
 }
 
 .main-page-header ion-toolbar {

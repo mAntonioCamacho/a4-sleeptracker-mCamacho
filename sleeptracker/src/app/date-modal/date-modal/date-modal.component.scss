@@ -1,0 +1,73 @@
+ion-card-title {
+  color: #00ff84ee;
+}
+
+#main-card {
+  background: #00ff8455;
+}
+
+#ion-input::part(native)::-webkit-calendar-picker-indicator {
+    background: #00ff8455;
+}
+
+ion-range {
+  --bar-background-active: #00ff84ee;
+  --knob-background: #00ff84ee;
+  --bar-background: #00ff8455;
+}
+
+ion-range::part(tick) {
+  background: #01ff84;
+}
+
+ion-toolbar {
+  --background: #e7020200;
+}
+
+#toolbar {
+  background: #00ff8455;
+}
+
+ion-card-content {
+  color: #00ff84ee;
+  background: #00ff8455;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+ion-button {
+  color: #00ff84ee;
+  --background: #00ff8455;
+}
+
+#ion-card-ad-space {
+  background-color: #00ff8455;
+}
+
+#ion-card-ad-space-text p {
+  color: #00ff84ee;
+}
+
+#log-toolbar p {
+  color: #00ff84ee;
+}
+
+ion-content::part(scroll) {
+  background: url("../../../assets/stars-background.png");
+  animation: stars2 1400s linear infinite;
+}
+
+@keyframes stars2 {
+  from {
+    background-position-x: 90%;
+  }
+  to {
+    background-position-y: 110%;
+  }
+}
+
+ion-button::part(native) {
+    color: #00ff84ee;
+}
